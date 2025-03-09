@@ -1,0 +1,19 @@
+.MODEL SMALL
+.STACK 100H
+.CODE
+
+MAIN PROC 
+    MOV CL,9
+    PRINT:
+    
+    MOV AH,2
+    MOV BL,CL
+    ADD BL,48
+    MOV DL,BL
+    INT 21H
+    DEC CL
+    CMP CL,0
+    JGE PRINT 
+EXIT:
+MAIN ENDP
+END MAIN
